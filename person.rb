@@ -1,4 +1,7 @@
 class Person
+  attr_reader :id
+  attr_accessor :name, :age
+
   def intialize(age, name: 'Unknown', parent_permission: true)
     @id = Random.rand(1..5000)
     @name = name

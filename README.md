@@ -9,7 +9,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 The Catalog The Catalog](#-the-catalog-the-catalog)
+- [📖 The Catalog ](#-the-catalog-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -28,7 +28,7 @@
   - [❓ FAQ ](#-faq-)
   - [📝 License ](#-license-)
 
-# 📖 The Catalog <a name="about-project">The Catalog</a>
+# 📖 The Catalog <a name="about-project"></a>
 
 The Catalog project is an app developed to simulate the operations of a real-world library within OOP University. This app is designed to utilize Object-Oriented Programming (OOP) principles to create a comprehensive system that captures vital library processes.
 
@@ -37,16 +37,14 @@ The Catalog project is an app developed to simulate the operations of a real-wor
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-<summary>Backend</summary>
   <ul>
     <li><a href="https://ruby-doc.org/">Ruby</a></li>
   </ul>
 </details>
 
 ### Key Features <a name="key-features"></a>
-- **Register new students or teachers.**
-- **Catalogue new books.**
-- **Track book borrowing records along with timestamps.**
+- **Create necessary associations within the project to lay the foundation for the user interface development planned for the next milestone.**
+- **Use of the decorator pattern, which is employed to add additional functionalities to objects dynamically.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,7 +146,7 @@ I would like to thank all of my colleagues who inspire to do my best everyday.
 
 - **Did you create this project from scratch?**
 
-  - Yes, and for that reason I learned a lot.
+  - Yes, and for that reason, I have extensively learned about Object-Oriented Programming, including key concepts such as association, aggregation, and composition, as well as skills in running scripts, obtaining user input, adhering to best practices, and applying SOLID principles.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

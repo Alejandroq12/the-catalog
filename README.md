@@ -36,11 +36,9 @@ The Catalog project is an app developed to simulate the operations of a real-wor
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
   <ul>
     <li><a href="https://ruby-doc.org/">Ruby</a></li>
   </ul>
-</details>
 
 ### Key Features <a name="key-features"></a>
 - **Create necessary associations within the project to lay the foundation for the user interface development planned for the next milestone.**

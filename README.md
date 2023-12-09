@@ -113,7 +113,7 @@ Not available at the moment.
 ## 🔭 Future Features <a name="future-features"></a>
 
 - **I will add a user interface.**
-- **I will implement composition as an example of the design pattern.**
+- **I will preserve data.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

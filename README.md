@@ -144,7 +144,7 @@ I would like to thank all of my colleagues who inspire to do my best everyday.
 
 ## ❓ FAQ <a name="faq"></a>
 
-- **Did you create this project from scratch?**
+**Did you create this project from scratch?**
 
   - Yes, and for that reason, I have extensively learned about Object-Oriented Programming, including key concepts such as association, aggregation, and composition, as well as skills in running scripts, obtaining user input, adhering to best practices, and applying SOLID principles.
 

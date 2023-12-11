@@ -2,7 +2,7 @@
 
 <a name="readme-top"></a>
 <div align="center">
-    <img src="logo-julio.png" alt="logo" width="500"  height="auto" />
+    <img src="logo-julio.png" alt="main-logo" width="500"  height="auto" />
   <br/>
   <h3><b>The Catalog</b></h3>
 </div>
@@ -31,6 +31,7 @@
 # 📖 The Catalog <a name="about-project"></a>
 
 The Catalog project is an app developed to simulate the operations of a real-world library within OOP University. This app is designed to utilize Object-Oriented Programming (OOP) principles to create a comprehensive system that captures vital library processes.
+    <img src="logo.png" alt="logo" width="500"  height="auto" />
 
 ## 🛠 Built With <a name="built-with"></a>
 

@@ -15,7 +15,7 @@ class App
     puts "Welcome to School Library App!\n\n"
     @my_ui = Console.new
     @books_list = BooksList.new(@my_ui)
-    @rentals_list = RentalsList.new(@my_ui)
+    @rentals_list = RentalsList.new(@my_ui, @books_list)
   end
 
   def start

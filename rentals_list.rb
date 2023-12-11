@@ -1,8 +1,9 @@
 require_relative 'rental'
 
 class RentalsList
-  def initialize(my_ui)
+  def initialize(my_ui, book_list)
     @my_ui = my_ui
+    @book_list = book_list
     @rentals = []
   end
 
@@ -21,11 +22,11 @@ class RentalsList
 
   def create_rental
     puts 'Select a book from the following list by number'
-    p @books
-    @books.each_with_index do |book, index|
-      puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
-    end
-    book_index = gets.chomp.to_i
+
+    # @books.each_with_index do |book, index|
+    #   puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
+    # end
+    book = @book_list.select_book
 
     puts 'Select a person from the following list by number (not id)'
     @people.each_with_index do |person, index|
@@ -36,7 +37,7 @@ class RentalsList
     print 'Date: '
     date = gets.chomp
 
-    @rentals << Rental.new(date, @books[book_index], @people[person_index])
+    @rentals << Rental.new(date, book, @people[person_index])
     puts 'Rental created successfully'
     puts
   end

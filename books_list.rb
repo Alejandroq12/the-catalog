@@ -7,7 +7,7 @@ class BooksList
   end
 
   def list_all_books
-    @books.each { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
+    @books.each { |book| puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}" }
     puts
   end
 
@@ -23,11 +23,11 @@ class BooksList
   end
 
   def select_book
-    @my_ui.print_message('Select a book from the following list by number')
+    puts 'Select a book from the following list by number'
     @books.each_with_index do |book, index|
-      @my_ui.print_message("#{index}) Title: \"#{book.title}\", Author: #{book.author}")
+      puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
     end
-    book_index = @my_ui.input.to_i
+    book_index = @my_ui.gets_option.to_i
     @books[book_index]
   end
 end

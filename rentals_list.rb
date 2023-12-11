@@ -23,7 +23,6 @@ class RentalsList
 
   def create_rental
     puts 'Select a book from the following list by number'
-
     book = @book_list.select_book
     person = @people_list.select_person
     print 'Date: '

@@ -4,6 +4,7 @@ require_relative 'teacher'
 require_relative 'student'
 require_relative 'rental'
 require_relative 'console'
+require_relative 'books_list'
 
 class App
   def initialize
@@ -11,15 +12,24 @@ class App
     @people = []
     @rentals = []
     puts "Welcome to School Library App!\n\n"
-    @ui = Console.new
+    @my_ui = Console.new
+    @books_list = BooksList.new(@my_ui)
   end
 
   def start
     loop do
-      @ui.show_console
-      choice = @ui.gets_option
+      @my_ui.show_console
+      choice = @my_ui.gets_option
       handle_option(choice)
     end
+  end
+
+  def list_all_books
+    @books_list.list_all_books
+  end
+
+  def create_book
+    @books_list.create_book
   end
 
   def list_rentals_for_person_id
@@ -33,11 +43,6 @@ class App
       puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
       puts
     end
-  end
-
-  def list_all_books
-    @books.each { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
-    puts
   end
 
   def list_all_people
@@ -107,17 +112,6 @@ class App
     specialization = gets.chomp
 
     @people << Teacher.new(age.to_i, name, specialization)
-  end
-
-  def create_book
-    print 'Title: '
-    title = gets.chomp
-    print 'Author: '
-    author = gets.chomp
-
-    @books << Book.new(title, author)
-    puts 'Book created successfully'
-    puts
   end
 
   def create_rental

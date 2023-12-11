@@ -33,7 +33,7 @@
 The Catalog project is an app developed to simulate the operations of a real-world library within OOP University. This app is designed to utilize Object-Oriented Programming (OOP) principles to create a comprehensive system that captures vital library processes.
 <div align="center">
     <img src="logo.png" alt="logo" width="500"  height="auto" />
-<div>
+</div>
 
 ## 🛠 Built With <a name="built-with"></a>
 

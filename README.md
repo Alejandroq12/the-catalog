@@ -2,7 +2,7 @@
 
 <a name="readme-top"></a>
 <div align="center">
-    <img src="logo.png" alt="logo" width="750"  height="auto" />
+    <img src="logo-julio.png" alt="logo" width="750"  height="auto" />
   <br/>
   <h3><b>The Catalog</b></h3>
 </div>

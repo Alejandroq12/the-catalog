@@ -3,6 +3,7 @@ require_relative 'person'
 require_relative 'teacher'
 require_relative 'student'
 require_relative 'rental'
+require_relative 'console'
 
 class App
   def initialize
@@ -10,6 +11,15 @@ class App
     @people = []
     @rentals = []
     puts "Welcome to School Library App!\n\n"
+    @ui = Console.new
+  end
+
+  def start
+    loop do
+      @ui.show_console
+      choice = @ui.gets_option
+      handle_option(choice)
+    end
   end
 
   def list_rentals_for_person_id
@@ -150,21 +160,5 @@ class App
     else
       puts 'Invalid option'
     end
-  end
-
-  def main
-    puts 'Please choose an option by entering a number:'
-    puts '1 - List all books'
-    puts '2 - List all people'
-    puts '3 - Create a person'
-    puts '4 - Create a book'
-    puts '5 - Create a rental'
-    puts '6 - List all rentals for a given person id'
-    puts '7 - Exit'
-
-    choice = gets.chomp
-
-    handle_option(choice)
-    main
   end
 end

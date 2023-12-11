@@ -46,6 +46,8 @@ The Catalog project is an app developed to simulate the operations of a real-wor
 ### Key Features <a name="key-features"></a>
 - **Create necessary associations within the project to lay the foundation for the user interface development planned for the next milestone.**
 - **Use of the decorator pattern, which is employed to add additional functionalities to objects dynamically.**
+- **Add a console User Interface to run the application.**
+- **Refactor the entire application to apply SOLID, YAGNI, KISS, & DRY principles.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,6 +111,11 @@ Not available at the moment.
 - Twitter: [@JulioAle54](https://twitter.com/JulioAle54)
 - LinkedIn: [Julio Quezada](https://www.linkedin.com/in/quezadajulio/)
 
+👤 **Juan Carlos Muñoz**
+
+- GitHub: [@jcmunav63](https://github.com/jcmunav63)
+- Twitter: [@jcmunav63](https://twitter.com/jcmunav63)
+- LinkedIn: [@juan-carlos-muñoz-navarrete](https://www.linkedin.com/in/juan-carlos-mu%C3%B1oz-navarrete-5a15b6276/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>

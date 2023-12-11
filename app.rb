@@ -6,16 +6,15 @@ require_relative 'rental'
 require_relative 'console'
 require_relative 'books_list'
 require_relative 'rentals_list'
+require_relative 'people_list'
 
 class App
   def initialize
-    @books = []
-    @people = []
-    @rentals = []
     puts "Welcome to School Library App!\n\n"
     @my_ui = Console.new
     @books_list = BooksList.new(@my_ui)
-    @rentals_list = RentalsList.new(@my_ui, @books_list)
+    @people_list = PeopleList.new(@my_ui)
+    @rentals_list = RentalsList.new(@my_ui, @books_list, @people_list)
   end
 
   def start
@@ -34,113 +33,20 @@ class App
     @books_list.create_book
   end
 
-  # def list_rentals_for_person_id
-  #   print 'ID of person: '
-  #   id = gets.chomp.to_i
-
-  #   rentals = @rentals.filter { |rental| rental.person.id == id }
-  #   puts 'Rentals:'
-
-  #   rentals.each do |rental|
-  #     puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
-  #     puts
-  #   end
-  # end
   def list_rentals_for_person_id
-    @rentals_list.list_all_books
+    @rentals_list.list_rentals_for_person_id
   end
 
-  def list_all_people
-    @people.each do |person|
-      puts "Type: #{person.class}, Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
-    puts
+  def create_rental
+    @rentals_list.create_rental
   end
 
   def create_person
-    print 'Do you want to create a student (1) or a teacher (2)? [input number]: '
-    choice = gets.chomp
-
-    case choice
-    when '1'
-      create_student
-    when '2'
-      create_teacher
-    else
-      puts 'Invalid option'
-      return
-    end
-    puts 'Person created successfully'
-    puts
+    @people_list.create_person
   end
 
-  def create_student
-    age = nil
-    loop do
-      print 'Age: '
-      age = gets.chomp
-      break if age.match?(/^\d+$/) # checks if the input contains only digits
-
-      puts 'Invalid age. Please enter a valid number.'
-    end
-
-    print 'Name: '
-    name = gets.chomp
-
-    parent_permission = nil
-    loop do
-      print 'Has parent permission? [Y/N]: '
-      parent_permission = gets.chomp.downcase
-      break if %w[y n].include?(parent_permission)
-
-      puts 'Invalid input. Please enter Y for Yes or N for No.'
-    end
-
-    @people << Student.new(age.to_i, name, parent_permission: parent_permission == 'y')
-  end
-
-  def create_teacher
-    age = nil
-    loop do
-      print 'Age: '
-      age = gets.chomp
-      break if age.match?(/^\d+$/) # checks if the input contains only digits
-
-      puts 'Invalid age. Please enter a valid number.'
-    end
-
-    print 'Name: '
-    name = gets.chomp
-    name = 'Unknown' if name.empty?
-
-    print 'Specialization: '
-    specialization = gets.chomp
-
-    @people << Teacher.new(age.to_i, name, specialization)
-  end
-
-  # def create_rental
-  #   puts 'Select a book from the following list by number'
-  #   @books.each_with_index do |book, index|
-  #     puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
-  #   end
-  #   book_index = gets.chomp.to_i
-
-  #   puts 'Select a person from the following list by number (not id)'
-  #   @people.each_with_index do |person, index|
-  #     puts "#{index}) [#{person.class}]: Name: \"#{person.name}\", ID: #{person.id}, Age: #{person.age}"
-  #   end
-  #   person_index = gets.chomp.to_i
-
-  #   print 'Date: '
-  #   date = gets.chomp
-
-  #   @rentals << Rental.new(date, @books[book_index], @people[person_index])
-  #   puts 'Rental created successfully'
-  #   puts
-  # end
-  def create_rental
-    @rentals_list.create_rental
+  def list_all_people
+    @people_list.list_all_people
   end
 
   def handle_option(choice)

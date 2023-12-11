@@ -5,6 +5,7 @@ require_relative 'student'
 require_relative 'rental'
 require_relative 'console'
 require_relative 'books_list'
+require_relative 'rentals_list'
 
 class App
   def initialize
@@ -14,6 +15,7 @@ class App
     puts "Welcome to School Library App!\n\n"
     @my_ui = Console.new
     @books_list = BooksList.new(@my_ui)
+    @rentals_list = RentalsList.new(@my_ui)
   end
 
   def start
@@ -32,17 +34,20 @@ class App
     @books_list.create_book
   end
 
+  # def list_rentals_for_person_id
+  #   print 'ID of person: '
+  #   id = gets.chomp.to_i
+
+  #   rentals = @rentals.filter { |rental| rental.person.id == id }
+  #   puts 'Rentals:'
+
+  #   rentals.each do |rental|
+  #     puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
+  #     puts
+  #   end
+  # end
   def list_rentals_for_person_id
-    print 'ID of person: '
-    id = gets.chomp.to_i
-
-    rentals = @rentals.filter { |rental| rental.person.id == id }
-    puts 'Rentals:'
-
-    rentals.each do |rental|
-      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
-      puts
-    end
+    @rentals_list.list_all_books
   end
 
   def list_all_people
@@ -114,25 +119,28 @@ class App
     @people << Teacher.new(age.to_i, name, specialization)
   end
 
+  # def create_rental
+  #   puts 'Select a book from the following list by number'
+  #   @books.each_with_index do |book, index|
+  #     puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
+  #   end
+  #   book_index = gets.chomp.to_i
+
+  #   puts 'Select a person from the following list by number (not id)'
+  #   @people.each_with_index do |person, index|
+  #     puts "#{index}) [#{person.class}]: Name: \"#{person.name}\", ID: #{person.id}, Age: #{person.age}"
+  #   end
+  #   person_index = gets.chomp.to_i
+
+  #   print 'Date: '
+  #   date = gets.chomp
+
+  #   @rentals << Rental.new(date, @books[book_index], @people[person_index])
+  #   puts 'Rental created successfully'
+  #   puts
+  # end
   def create_rental
-    puts 'Select a book from the following list by number'
-    @books.each_with_index do |book, index|
-      puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
-    end
-    book_index = gets.chomp.to_i
-
-    puts 'Select a person from the following list by number (not id)'
-    @people.each_with_index do |person, index|
-      puts "#{index}) [#{person.class}]: Name: \"#{person.name}\", ID: #{person.id}, Age: #{person.age}"
-    end
-    person_index = gets.chomp.to_i
-
-    print 'Date: '
-    date = gets.chomp
-
-    @rentals << Rental.new(date, @books[book_index], @people[person_index])
-    puts 'Rental created successfully'
-    puts
+    @rentals_list.create_rental
   end
 
   def handle_option(choice)

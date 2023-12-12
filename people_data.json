@@ -1,7 +1,7 @@
 [
   {
     "type": "Student",
-    "id": 144,
+    "id": 3071,
     "name": "Jose",
     "age": 10,
     "parent_permission": true,
@@ -9,7 +9,7 @@
   },
   {
     "type": "Teacher",
-    "id": 4244,
+    "id": 3750,
     "name": "Juan",
     "age": 35,
     "parent_permission": true,
@@ -17,10 +17,34 @@
   },
   {
     "type": "Teacher",
-    "id": 2481,
+    "id": 3800,
     "name": "Josefina",
     "age": 46,
     "parent_permission": true,
     "specialization": "English"
+  },
+  {
+    "type": "Student",
+    "id": 1286,
+    "name": "Stefan",
+    "age": 23,
+    "parent_permission": true,
+    "classroom": null
+  },
+  {
+    "type": "Student",
+    "id": 1540,
+    "name": "Joaquin",
+    "age": 12,
+    "parent_permission": true,
+    "classroom": null
+  },
+  {
+    "type": "Teacher",
+    "id": 15,
+    "name": "Anita",
+    "age": 44,
+    "parent_permission": true,
+    "specialization": "Biology"
   }
 ]

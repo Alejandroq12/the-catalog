@@ -5,7 +5,7 @@ class Rental
     @date = date
     self.book = book
     self.person = person
-    @book_index = book.index
+    @book_index = book_index
     @person_id = person.id
   end
 

@@ -18,5 +18,17 @@
   {
     "title": "Title 1",
     "author": "Author 1"
+  },
+  {
+    "title": "Another one",
+    "author": "Another author"
+  },
+  {
+    "title": "Book 7",
+    "author": "Author 7"
+  },
+  {
+    "title": "Book 8",
+    "author": "Author 8"
   }
 ]

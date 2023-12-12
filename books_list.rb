@@ -25,7 +25,7 @@ class BooksList
     author = @my_ui.input_prompt('Author: ')
 
     @books << Book.new(title, author)
-    save_books
+    # save_books
     puts 'Book created successfully'
     puts
   end

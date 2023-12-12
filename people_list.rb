@@ -54,7 +54,7 @@ class PeopleList
     end
 
     @people << Student.new(age.to_i, name, parent_permission: parent_permission == 'y')
-    save_people
+    # save_people
   end
 
   def find_person_by_id(id)
@@ -76,7 +76,7 @@ class PeopleList
     specialization = @my_ui.input_prompt('Specialization: ')
 
     @people << Teacher.new(age.to_i, name, specialization)
-    save_people
+    # save_people
   end
 
   def select_person

@@ -13,7 +13,7 @@ class RentalsList
   def list_rentals_for_person_id
     id = @my_ui.input_prompt('ID of person: ').to_i
 
-    rentals = @rentals.filter { |rental| rental.person.id == id }
+    rentals = @rentals.filter { |rental| rental.person_id == id }
     puts 'Rentals:'
 
     rentals.each do |rental|
@@ -31,7 +31,7 @@ class RentalsList
     @rentals << Rental.new(date, book, person)
     puts 'Rental created successfully'
     puts
-    save_rentals
+    # save_rentals
   end
 
   def save_rentals

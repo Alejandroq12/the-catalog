@@ -5,7 +5,7 @@
     "name": "Jose",
     "age": 10,
     "parent_permission": true,
-    "classroom": 1
+    "classroom": null
   },
   {
     "type": "Teacher",
@@ -29,7 +29,7 @@
     "name": "Stefan",
     "age": 23,
     "parent_permission": true,
-    "classroom": 2
+    "classroom": null
   },
   {
     "type": "Student",
@@ -37,7 +37,7 @@
     "name": "Joaquin",
     "age": 12,
     "parent_permission": true,
-    "classroom": 3
+    "classroom": null
   },
   {
     "type": "Teacher",
@@ -53,7 +53,7 @@
     "name": "Alejandro",
     "age": 20,
     "parent_permission": true,
-    "classroom": 4
+    "classroom": null
   },
   {
     "type": "Student",
@@ -61,6 +61,6 @@
     "name": "Julio",
     "age": 10,
     "parent_permission": true,
-    "classroom": 5
+    "classroom": null
   }
 ]

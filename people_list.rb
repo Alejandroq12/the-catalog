@@ -54,7 +54,6 @@ class PeopleList
     end
 
     @people << Student.new(age.to_i, name, parent_permission: parent_permission == 'y')
-    # save_people
   end
 
   def find_person_by_id(id)

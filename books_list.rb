@@ -16,8 +16,8 @@ class BooksList
     puts
   end
 
-  def find_book_by_index(index)
-    @books[index] if index.between?(0, @books.length - 1)
+  def find_book_by_id(id)
+    @books.find { |book| book.id == id }
   end
 
   def create_book
@@ -25,7 +25,6 @@ class BooksList
     author = @my_ui.input_prompt('Author: ')
 
     @books << Book.new(title, author)
-    # save_books
     puts 'Book created successfully'
     puts
   end

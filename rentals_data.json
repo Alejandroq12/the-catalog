@@ -1,0 +1,32 @@
+[
+  {
+    "date": "111",
+    "book_id": 1,
+    "person_id": 1
+  },
+  {
+    "date": "5555",
+    "book_id": 6,
+    "person_id": 6
+  },
+  {
+    "date": "2026/01/01",
+    "book_id": 9,
+    "person_id": 7
+  },
+  {
+    "date": "2022/01/01",
+    "book_id": 8,
+    "person_id": 6
+  },
+  {
+    "date": "2021/01/01",
+    "book_id": 1,
+    "person_id": 1
+  },
+  {
+    "date": "2030/01/01",
+    "book_id": 1,
+    "person_id": 2
+  }
+]

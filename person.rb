@@ -1,4 +1,5 @@
 require_relative 'nameable'
+require_relative 'id_manager'
 
 class Person < Nameable
   attr_reader :id
@@ -6,7 +7,7 @@ class Person < Nameable
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     super()
-    @id = Random.rand(1..5000)
+    @id = IDManager.next_id
     @age = age
     @name = name
     @parent_permission = parent_permission

@@ -12,13 +12,10 @@ class RentalsList
 
   def list_rentals_for_person_id
     id = @my_ui.input_prompt('ID of person: ').to_i
-
-    rentals = @rentals.filter { |rental| rental.person_id == id }
+    rentals = @rentals.filter { |rental| rental.person.id == id }
     puts 'Rentals:'
-
     rentals.each do |rental|
-      book = @book_list.find_book_by_index(rental.book_index)
-      puts "Date: #{rental.date}, Book \"#{book.title}\" by #{book.author}"
+      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
       puts
     end
   end
@@ -28,16 +25,16 @@ class RentalsList
     person = @people_list.select_person
     date = @my_ui.input_prompt('Date: ')
 
-    @rentals << Rental.new(date, book, person)
+    rental = Rental.new(date, book, person)
+    unless @rentals.any? { |r| r.date == rental.date && r.book == rental.book && r.person == rental.person }
+      @rentals << rental
+    end
     puts 'Rental created successfully'
     puts
-    # save_rentals
   end
 
   def save_rentals
     File.write(DATA_FILE, JSON.pretty_generate(@rentals.map(&:to_hash)))
-  rescue StandardError => e
-    puts "Failed to save data: #{e.message}"
   end
 
   private
@@ -49,13 +46,9 @@ class RentalsList
     return [] if file_data.strip.empty?
 
     JSON.parse(file_data).map do |rental_data|
-      book_index = rental_data['book_id'].to_i
-      book = @book_list.find_book_by_index(book_index)
+      book = @book_list.find_book_by_id(rental_data['book_id'])
       person = @people_list.find_person_by_id(rental_data['person_id'])
       Rental.new(rental_data['date'], book, person) if book && person
     end.compact
-  rescue JSON::ParserError => e
-    puts "Error parsing JSON file: #{e.message}"
-    []
   end
 end

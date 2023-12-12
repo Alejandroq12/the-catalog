@@ -1,15 +1,15 @@
 [
   {
     "type": "Student",
-    "id": 3071,
+    "id": 1,
     "name": "Jose",
     "age": 10,
     "parent_permission": true,
-    "classroom": null
+    "classroom": 1
   },
   {
     "type": "Teacher",
-    "id": 3750,
+    "id": 2,
     "name": "Juan",
     "age": 35,
     "parent_permission": true,
@@ -17,7 +17,7 @@
   },
   {
     "type": "Teacher",
-    "id": 3800,
+    "id": 3,
     "name": "Josefina",
     "age": 46,
     "parent_permission": true,
@@ -25,26 +25,42 @@
   },
   {
     "type": "Student",
-    "id": 1286,
+    "id": 4,
     "name": "Stefan",
     "age": 23,
     "parent_permission": true,
-    "classroom": null
+    "classroom": 2
   },
   {
     "type": "Student",
-    "id": 1540,
+    "id": 5,
     "name": "Joaquin",
     "age": 12,
     "parent_permission": true,
-    "classroom": null
+    "classroom": 3
   },
   {
     "type": "Teacher",
-    "id": 15,
+    "id": 6,
     "name": "Anita",
     "age": 44,
     "parent_permission": true,
     "specialization": "Biology"
+  },
+  {
+    "type": "Student",
+    "id": 7,
+    "name": "Alejandro",
+    "age": 20,
+    "parent_permission": true,
+    "classroom": 4
+  },
+  {
+    "type": "Student",
+    "id": 8,
+    "name": "Julio",
+    "age": 10,
+    "parent_permission": true,
+    "classroom": 5
   }
 ]

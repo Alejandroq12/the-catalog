@@ -1,10 +1,26 @@
 [
   {
     "type": "Student",
-    "id": 2778,
+    "id": 144,
     "name": "Jose",
     "age": 10,
     "parent_permission": true,
     "classroom": null
+  },
+  {
+    "type": "Teacher",
+    "id": 4244,
+    "name": "Juan",
+    "age": 35,
+    "parent_permission": true,
+    "specialization": "Math"
+  },
+  {
+    "type": "Teacher",
+    "id": 2481,
+    "name": "Josefina",
+    "age": 46,
+    "parent_permission": true,
+    "specialization": "English"
   }
 ]

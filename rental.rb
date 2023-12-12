@@ -18,4 +18,12 @@ class Rental
     @person = person
     person.rentals << self unless person.rentals.include?(self)
   end
+
+  def to_hash
+    {
+      'date' => @date,
+      'book' => @book,
+      'person' => @person
+    }
+  end
 end

@@ -7,7 +7,7 @@ class BooksList
   end
 
   def list_all_books
-    @books.each { |book| puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}" }
+    @books.each_with_index { |book, index| puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}" }
     puts
   end
 

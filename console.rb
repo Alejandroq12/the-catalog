@@ -10,6 +10,11 @@ class Console
     puts '7 - Exit'
   end
 
+  def input_prompt(message)
+    print message
+    gets.chomp
+  end
+
   def gets_option
     gets.chomp
   end

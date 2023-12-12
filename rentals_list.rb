@@ -9,8 +9,7 @@ class RentalsList
   end
 
   def list_rentals_for_person_id
-    print 'ID of person: '
-    id = @my_ui.gets_option.to_i
+    id = @my_ui.input_prompt('ID of person: ').to_i
 
     rentals = @rentals.filter { |rental| rental.person.id == id }
     puts 'Rentals:'
@@ -22,11 +21,9 @@ class RentalsList
   end
 
   def create_rental
-    puts 'Select a book from the following list by number'
     book = @book_list.select_book
     person = @people_list.select_person
-    print 'Date: '
-    date = gets.chomp
+    date = @my_ui.input_prompt('Date: ')
 
     @rentals << Rental.new(date, book, person)
     puts 'Rental created successfully'

@@ -12,10 +12,8 @@ class BooksList
   end
 
   def create_book
-    print 'Title: '
-    title = gets.chomp
-    print 'Author: '
-    author = gets.chomp
+    title = @my_ui.input_prompt('Title: ')
+    author = @my_ui.input_prompt('Author: ')
 
     @books << Book.new(title, author)
     puts 'Book created successfully'
@@ -23,7 +21,6 @@ class BooksList
   end
 
   def select_book
-    puts @books
     puts 'Select a book from the following list by number'
     @books.each_with_index do |book, index|
       puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"

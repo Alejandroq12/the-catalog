@@ -16,8 +16,7 @@ class PeopleList
   end
 
   def create_person
-    print 'Do you want to create a student (1) or a teacher (2)? [input number]: '
-    choice = gets.chomp
+    choice = @my_ui.input_prompt('Do you want to create a student (1) or a teacher (2)? [input number]: ')
 
     case choice
     when '1'
@@ -35,20 +34,17 @@ class PeopleList
   def create_student
     age = nil
     loop do
-      print 'Age: '
-      age = gets.chomp
+      age = @my_ui.input_prompt('Age: ')
       break if age.match?(/^\d+$/) # checks if the input contains only digits
 
       puts 'Invalid age. Please enter a valid number.'
     end
 
-    print 'Name: '
-    name = gets.chomp
+    name = @my_ui.input_prompt('Name: ')
 
     parent_permission = nil
     loop do
-      print 'Has parent permission? [Y/N]: '
-      parent_permission = gets.chomp.downcase
+      parent_permission = @my_ui.input_prompt('Has parent permission? [Y/N]: ').downcase
       break if %w[y n].include?(parent_permission)
 
       puts 'Invalid input. Please enter Y for Yes or N for No.'
@@ -60,19 +56,16 @@ class PeopleList
   def create_teacher
     age = nil
     loop do
-      print 'Age: '
-      age = gets.chomp
+      age = @my_ui.input_prompt('Age: ')
       break if age.match?(/^\d+$/) # checks if the input contains only digits
 
       puts 'Invalid age. Please enter a valid number.'
     end
 
-    print 'Name: '
-    name = gets.chomp
+    name = @my_ui.input_prompt('Name: ')
     name = 'Unknown' if name.empty?
 
-    print 'Specialization: '
-    specialization = gets.chomp
+    specialization = @my_ui.input_prompt('Specialization: ')
 
     @people << Teacher.new(age.to_i, name, specialization)
   end

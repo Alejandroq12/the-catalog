@@ -7,6 +7,7 @@ class BooksList
   end
 
   def list_all_books
+    read = read_books_file
     @books.each_with_index { |book, index| puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}" }
     puts
   end
@@ -27,5 +28,12 @@ class BooksList
     end
     book_index = @my_ui.gets_option.to_i
     @books[book_index]
+  end
+
+  def read_book_files
+    [] unless File.exist?('books_data.json')
+    file_data1 = File.read('books_data.json').split
+    file_data_parsed = JSON.parse(file_data1)
+    @books = file_data_parsed
   end
 end

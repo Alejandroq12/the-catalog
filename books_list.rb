@@ -16,6 +16,10 @@ class BooksList
     puts
   end
 
+  def find_book_by_index(index)
+    @books[index] if index.between?(0, @books.length - 1)
+  end
+
   def create_book
     title = @my_ui.input_prompt('Title: ')
     author = @my_ui.input_prompt('Author: ')

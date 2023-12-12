@@ -2,6 +2,7 @@ require_relative 'rental'
 
 class RentalsList
   DATA_FILE = 'rentals_data.json'.freeze
+
   def initialize(my_ui, book_list, people_list)
     @my_ui = my_ui
     @book_list = book_list
@@ -16,7 +17,8 @@ class RentalsList
     puts 'Rentals:'
 
     rentals.each do |rental|
-      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
+      book = @book_list.find_book_by_index(rental.book_index)
+      puts "Date: #{rental.date}, Book \"#{book.title}\" by #{book.author}"
       puts
     end
   end
@@ -47,10 +49,11 @@ class RentalsList
     return [] if file_data.strip.empty?
 
     JSON.parse(file_data).map do |rental_data|
-      book = @book_list.find_book_by_id(rental_data['book_id'])
+      book_index = rental_data['book_id'].to_i
+      book = @book_list.find_book_by_index(book_index)
       person = @people_list.find_person_by_id(rental_data['person_id'])
-      Rental.new(rental_data['date'], book, person)
-    end
+      Rental.new(rental_data['date'], book, person) if book && person
+    end.compact
   rescue JSON::ParserError => e
     puts "Error parsing JSON file: #{e.message}"
     []

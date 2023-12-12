@@ -1,12 +1,12 @@
 class Rental
-  attr_accessor :date
-  attr_reader :book, :person
+  attr_accessor :date, :book_index, :person_id
 
   def initialize(date, book, person)
     @date = date
-
     self.book = book
     self.person = person
+    @book_index = book.index
+    @person_id = person.id
   end
 
   def book=(book)
@@ -22,8 +22,8 @@ class Rental
   def to_hash
     {
       'date' => @date,
-      'book' => @book,
-      'person' => @person
+      'book_id' => @book_index,
+      'person_id' => @person_id
     }
   end
 end

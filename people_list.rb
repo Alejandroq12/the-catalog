@@ -57,6 +57,10 @@ class PeopleList
     save_people
   end
 
+  def find_person_by_id(id)
+    @people.find { |person| person.id == id }
+  end
+
   def create_teacher
     age = nil
     loop do

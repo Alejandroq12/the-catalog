@@ -1,0 +1,10 @@
+[
+  {
+    "type": "Student",
+    "id": 2778,
+    "name": "Jose",
+    "age": 10,
+    "parent_permission": true,
+    "classroom": null
+  }
+]

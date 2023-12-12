@@ -1,11 +1,14 @@
+require 'json'
 require_relative 'person'
 require_relative 'teacher'
 require_relative 'student'
 
 class PeopleList
+  DATA_FILE = 'people_data.json'.freeze
+
   def initialize(my_ui)
     @my_ui = my_ui
-    @people = []
+    @people = load_people
   end
 
   def list_all_people
@@ -51,6 +54,7 @@ class PeopleList
     end
 
     @people << Student.new(age.to_i, name, parent_permission: parent_permission == 'y')
+    save_people
   end
 
   def create_teacher
@@ -68,6 +72,7 @@ class PeopleList
     specialization = @my_ui.input_prompt('Specialization: ')
 
     @people << Teacher.new(age.to_i, name, specialization)
+    save_people
   end
 
   def select_person
@@ -77,5 +82,36 @@ class PeopleList
     end
     person_index = @my_ui.gets_option.to_i
     @people[person_index]
+  end
+
+  def save_people
+    File.write(DATA_FILE, JSON.pretty_generate(@people.map(&:to_hash)))
+  rescue StandardError => e
+    puts "Failed to save data: #{e.message}"
+  end
+
+  private
+
+  def load_people
+    return [] unless File.exist?(DATA_FILE)
+
+    file_data = File.read(DATA_FILE)
+    return [] if file_data.strip.empty?
+
+    begin
+      JSON.parse(file_data).map do |person_data|
+        case person_data['type']
+        when 'Student'
+          Student.from_hash(person_data)
+        when 'Teacher'
+          Teacher.from_hash(person_data)
+        else
+          Person.from_hash(person_data)
+        end
+      end
+    rescue JSON::ParserError => e
+      puts "Error parsing JSON file: #{e.message}"
+      []
+    end
   end
 end

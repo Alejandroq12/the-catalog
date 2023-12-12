@@ -15,4 +15,12 @@ class Student < Person
   def play_hooky
     '¯\\_(ツ)_/¯'
   end
+
+  def to_hash
+    super.merge({ 'classroom' => @classroom })
+  end
+
+  def self.from_hash(hash)
+    new(hash['age'], hash['name'], parent_permission: hash['parent_permission'], classroom: hash['classroom'])
+  end
 end

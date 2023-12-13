@@ -1,4 +1,3 @@
-# spec/decorator_spec.rb
 require_relative '../decorator'
 require_relative '../person'
 

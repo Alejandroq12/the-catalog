@@ -1,4 +1,3 @@
-# spec/teacher_spec.rb
 require_relative '../teacher'
 
 describe Teacher do

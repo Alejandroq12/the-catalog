@@ -1,4 +1,3 @@
-# spec/nameable_spec.rb
 require_relative '../nameable'
 
 describe Nameable do

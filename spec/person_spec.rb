@@ -1,4 +1,3 @@
-# spec/person_spec.rb
 require_relative '../person'
 
 describe Person do

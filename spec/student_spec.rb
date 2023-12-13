@@ -1,4 +1,3 @@
-# spec/student_spec.rb
 require_relative '../student'
 require_relative '../classroom'
 

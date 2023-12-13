@@ -22,7 +22,7 @@ describe Teacher do
   end
 
   context 'when created from a hash' do
-    hash = {'age' => 40, 'name' => 'Mrs. Johnson', 'specialization' => 'History'}
+    hash = { 'age' => 40, 'name' => 'Mrs. Johnson', 'specialization' => 'History' }
     teacher = Teacher.from_hash(hash)
 
     it 'has the correct attributes from hash' do

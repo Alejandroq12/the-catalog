@@ -16,7 +16,7 @@ RSpec.describe BooksList do
       book1 = Book.new('1984', 'George Orwell')
       book2 = Book.new('Brave New World', 'Aldous Huxley')
       books_list.instance_variable_set(:@books, [book1, book2])
-      expected_output = "0) Title: \"1984\", Author: George Orwell\n" +
+      expected_output = "0) Title: \"1984\", Author: George Orwell\n" \
                         "1) Title: \"Brave New World\", Author: Aldous Huxley\n\n"
       expect { books_list.list_all_books }.to output(expected_output).to_stdout
     end
@@ -49,7 +49,7 @@ RSpec.describe BooksList do
 
       books_list.create_book
 
-      new_book = books_list.instance_variable_get(:@books).last # first
+      new_book = books_list.instance_variable_get(:@books).last
 
       expect(new_book.title).to eq('New Book')
       expect(new_book.author).to eq('New Author')
@@ -62,7 +62,7 @@ RSpec.describe BooksList do
       book2 = instance_double('Book', title: 'Book 2', author: 'Author 2')
 
       allow(books_list).to receive(:list_all_books)
-      allow(my_ui).to receive(:gets_option).and_return('0') # Note: using a string
+      allow(my_ui).to receive(:gets_option).and_return('0')
       books_list.instance_variable_set(:@books, [book1, book2])
       selected_book = books_list.select_book
       expect(selected_book.title).to eq('Book 1')

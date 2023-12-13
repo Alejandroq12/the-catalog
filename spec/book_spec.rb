@@ -20,11 +20,9 @@ RSpec.describe Book do
   describe '#add_rental' do
     it 'Creates a new rental for the book' do
       book = Book.new('The Great Gatsby', 'F. Scott Fitzgerald')
-      person = Person.new(20, 'John Doe') # REVIEW
-      # person = instance_double('Person', id: 1, name: 'John Doe') REVIEW(first)
+      person = Person.new(20, 'John Doe')
       date = '2023-12-12'
-      rental = book.add_rental(person, date) # REVIEW(first)
-      rental2 = person.add_rental(rental) # REVIEW
+      rental = book.add_rental(person, date)
       expect(rental).to be_an_instance_of(Rental)
       expect(rental.book).to eq(book)
       expect(rental.person).to eq(person)

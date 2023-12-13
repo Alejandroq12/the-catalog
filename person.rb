@@ -16,12 +16,8 @@ class Person < Nameable
   end
 
   def add_rental(rental)
-    @rentals << rental # REVIEW
+    @rentals << rental
   end
-
-  # def add_rental(date, book)  REVIEW (FIRST)
-  #   Rental.new(date, book, self)
-  # end
 
   def can_use_services?
     of_age? || @parent_permission

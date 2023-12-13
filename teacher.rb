@@ -9,4 +9,12 @@ class Teacher < Person
   def can_use_services?
     true
   end
+
+  def to_hash
+    super.merge({ 'specialization' => @specialization })
+  end
+
+  def self.from_hash(hash)
+    new(hash['age'], hash['name'], hash['specialization'], parent_permission: hash['parent_permission'])
+  end
 end

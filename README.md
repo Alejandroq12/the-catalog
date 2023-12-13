@@ -48,6 +48,7 @@ The Catalog project is an app developed to simulate the operations of a real-wor
 - **Use of the decorator pattern, which is employed to add additional functionalities to objects dynamically.**
 - **Add a console User Interface to run the application.**
 - **Refactor the entire application to apply SOLID, YAGNI, KISS, & DRY principles.**
+- **Preserve all data using files with JSON format.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

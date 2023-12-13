@@ -1,0 +1,66 @@
+[
+  {
+    "type": "Student",
+    "id": 1,
+    "name": "Jose",
+    "age": 10,
+    "parent_permission": true,
+    "classroom": null
+  },
+  {
+    "type": "Teacher",
+    "id": 2,
+    "name": "Juan",
+    "age": 35,
+    "parent_permission": true,
+    "specialization": "Math"
+  },
+  {
+    "type": "Teacher",
+    "id": 3,
+    "name": "Josefina",
+    "age": 46,
+    "parent_permission": true,
+    "specialization": "English"
+  },
+  {
+    "type": "Student",
+    "id": 4,
+    "name": "Stefan",
+    "age": 23,
+    "parent_permission": true,
+    "classroom": null
+  },
+  {
+    "type": "Student",
+    "id": 5,
+    "name": "Joaquin",
+    "age": 12,
+    "parent_permission": true,
+    "classroom": null
+  },
+  {
+    "type": "Teacher",
+    "id": 6,
+    "name": "Anita",
+    "age": 44,
+    "parent_permission": true,
+    "specialization": "Biology"
+  },
+  {
+    "type": "Student",
+    "id": 7,
+    "name": "Alejandro",
+    "age": 20,
+    "parent_permission": true,
+    "classroom": null
+  },
+  {
+    "type": "Student",
+    "id": 8,
+    "name": "Julio",
+    "age": 10,
+    "parent_permission": true,
+    "classroom": null
+  }
+]

@@ -40,4 +40,10 @@ class App
   def list_all_people
     @people_list.list_all_people
   end
+
+  def save_all_data
+    @books_list.save_books
+    @people_list.save_people
+    @rentals_list.save_rentals
+  end
 end

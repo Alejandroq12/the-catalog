@@ -28,5 +28,10 @@
     "date": "2555/01/01",
     "book_id": 6,
     "person_id": 6
+  },
+  {
+    "date": "2023-12-10",
+    "book_id": 2,
+    "person_id": 2
   }
 ]

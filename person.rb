@@ -5,7 +5,8 @@ class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age, :rentals
 
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  # = 'Unknown'
+  def initialize(age, name, parent_permission: true)
     super()
     @id = IDManager.next_id
     @age = age
@@ -14,9 +15,13 @@ class Person < Nameable
     @rentals = []
   end
 
-  def add_rental(date, book)
-    Rental.new(date, book, self)
+  def add_rental(rental)
+    @rentals << rental # REVIEW
   end
+
+  # def add_rental(date, book)  REVIEW (FIRST)
+  #   Rental.new(date, book, self)
+  # end
 
   def can_use_services?
     of_age? || @parent_permission

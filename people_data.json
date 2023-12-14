@@ -62,5 +62,13 @@
     "age": 10,
     "parent_permission": true,
     "classroom": null
+  },
+  {
+    "type": "Student",
+    "id": 9,
+    "name": "Julio",
+    "age": 52,
+    "parent_permission": false,
+    "classroom": null
   }
 ]
